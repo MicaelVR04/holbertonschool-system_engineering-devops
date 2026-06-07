@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="980" viewBox="0 0 1500 980">
+  <style>
+    .bg { fill: #f8fafc; }
+    .box { fill: #ffffff; stroke: #1f2937; stroke-width: 2; rx: 10; }
+    .server { fill: #eef6ff; stroke: #1d4ed8; stroke-width: 3; rx: 14; }
+    .lb { fill: #ecfdf5; stroke: #047857; stroke-width: 3; rx: 14; }
+    .db { fill: #fff7ed; stroke: #c2410c; stroke-width: 2; rx: 10; }
+    .fw { fill: #fee2e2; stroke: #b91c1c; stroke-width: 3; rx: 12; }
+    .mon { fill: #f0f9ff; stroke: #0369a1; stroke-width: 2; rx: 10; }
+    .cert { fill: #fef9c3; stroke: #a16207; stroke-width: 2; rx: 10; }
+    .title { font: 700 28px Arial, sans-serif; fill: #111827; }
+    .label { font: 700 19px Arial, sans-serif; fill: #111827; }
+    .small { font: 15px Arial, sans-serif; fill: #374151; }
+    .note { font: 14px Arial, sans-serif; fill: #334155; }
+    .warn { font: 15px Arial, sans-serif; fill: #991b1b; }
+    .arrow { stroke: #111827; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+    .green { stroke: #047857; stroke-width: 3; fill: none; marker-end: url(#arrowhead-green); }
+    .orange { stroke: #c2410c; stroke-width: 3; fill: none; marker-end: url(#arrowhead-orange); }
+    .blue { stroke: #0369a1; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead-blue); }
+    .dash { stroke: #6b7280; stroke-width: 2; fill: none; stroke-dasharray: 8 6; marker-end: url(#arrowhead-gray); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#111827"/>
+    </marker>
+    <marker id="arrowhead-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#047857"/>
+    </marker>
+    <marker id="arrowhead-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#c2410c"/>
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0369a1"/>
+    </marker>
+    <marker id="arrowhead-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1500" height="980"/>
+  <text class="title" x="55" y="55">2. Secured and monitored web infrastructure: www.foobar.com</text>
+
+  <rect class="box" x="60" y="120" width="165" height="90"/>
+  <text class="label" x="108" y="157">User</text>
+  <text class="small" x="83" y="184">Browser client</text>
+
+  <rect class="box" x="285" y="105" width="215" height="120"/>
+  <text class="label" x="345" y="145">DNS</text>
+  <text class="small" x="314" y="176">www.foobar.com</text>
+  <text class="small" x="314" y="202">A record to HAProxy IP</text>
+
+  <rect class="fw" x="565" y="115" width="135" height="100"/>
+  <text class="label" x="594" y="155">Firewall</text>
+  <text class="small" x="595" y="184">Protects LB</text>
+
+  <rect class="lb" x="755" y="92" width="250" height="150"/>
+  <text class="label" x="830" y="132">HAProxy</text>
+  <text class="small" x="793" y="162">Load balancer</text>
+  <text class="small" x="793" y="188">SSL termination</text>
+  <text class="small" x="793" y="214">Round-robin traffic</text>
+
+  <rect class="cert" x="1040" y="118" width="245" height="95"/>
+  <text class="label" x="1088" y="155">SSL certificate</text>
+  <text class="small" x="1070" y="184">Serves HTTPS for</text>
+  <text class="small" x="1070" y="206">www.foobar.com</text>
+
+  <rect class="server" x="220" y="355" width="360" height="455"/>
+  <text class="label" x="345" y="394">Server 1</text>
+
+  <rect class="fw" x="250" y="430" width="110" height="58"/>
+  <text class="small" x="276" y="464">Firewall</text>
+
+  <rect class="box" x="388" y="420" width="155" height="48"/>
+  <text class="small" x="438" y="449">Nginx</text>
+
+  <rect class="box" x="388" y="488" width="155" height="48"/>
+  <text class="small" x="416" y="517">App server</text>
+
+  <rect class="box" x="388" y="556" width="155" height="48"/>
+  <text class="small" x="417" y="585">Codebase</text>
+
+  <rect class="db" x="388" y="624" width="155" height="48"/>
+  <text class="small" x="414" y="653">MySQL Primary</text>
+
+  <rect class="mon" x="270" y="710" width="250" height="62"/>
+  <text class="small" x="300" y="737">Monitoring client</text>
+  <text class="note" x="300" y="758">Collects logs and metrics</text>
+
+  <rect class="server" x="770" y="355" width="360" height="455"/>
+  <text class="label" x="895" y="394">Server 2</text>
+
+  <rect class="fw" x="800" y="430" width="110" height="58"/>
+  <text class="small" x="826" y="464">Firewall</text>
+
+  <rect class="box" x="938" y="420" width="155" height="48"/>
+  <text class="small" x="988" y="449">Nginx</text>
+
+  <rect class="box" x="938" y="488" width="155" height="48"/>
+  <text class="small" x="966" y="517">App server</text>
+
+  <rect class="box" x="938" y="556" width="155" height="48"/>
+  <text class="small" x="967" y="585">Codebase</text>
+
+  <rect class="db" x="938" y="624" width="155" height="48"/>
+  <text class="small" x="967" y="653">MySQL Replica</text>
+
+  <rect class="mon" x="820" y="710" width="250" height="62"/>
+  <text class="small" x="850" y="737">Monitoring client</text>
+  <text class="note" x="850" y="758">Collects logs and metrics</text>
+
+  <rect class="mon" x="1030" y="255" width="255" height="62"/>
+  <text class="small" x="1060" y="282">Monitoring client</text>
+  <text class="note" x="1060" y="303">Collects HAProxy metrics</text>
+
+  <rect class="box" x="1185" y="390" width="220" height="130"/>
+  <text class="label" x="1236" y="425">Monitoring</text>
+  <text class="small" x="1215" y="455">Sumologic or similar</text>
+  <text class="small" x="1215" y="482">Receives metrics, logs,</text>
+  <text class="small" x="1215" y="506">alerts, and dashboards</text>
+
+  <path class="dash" d="M 225 145 C 250 120, 263 120, 285 138"/>
+  <text class="note" x="238" y="105">DNS lookup</text>
+
+  <path class="arrow" d="M 500 166 L 565 166"/>
+  <path class="arrow" d="M 700 166 L 755 166"/>
+  <path class="arrow" d="M 1005 166 L 1040 166"/>
+  <path class="arrow" d="M 225 185 C 370 280, 520 190, 565 188"/>
+  <text class="note" x="322" y="292">HTTPS over TCP/IP</text>
+
+  <path class="green" d="M 835 242 C 720 305, 610 360, 465 420"/>
+  <path class="green" d="M 925 242 C 1000 300, 1030 350, 1015 420"/>
+  <text class="note" x="645" y="325">HAProxy distributes requests to both active backends</text>
+
+  <path class="orange" d="M 543 648 C 675 700, 800 700, 938 648"/>
+  <text class="note" x="580" y="846">Primary accepts writes; Replica copies data and may serve reads depending on application configuration</text>
+
+  <path class="blue" d="M 520 742 C 720 690, 965 570, 1185 455"/>
+  <path class="blue" d="M 1070 742 C 1125 650, 1160 565, 1210 520"/>
+  <path class="blue" d="M 1158 317 C 1190 345, 1220 365, 1250 390"/>
+
+  <rect class="box" x="60" y="835" width="650" height="110"/>
+  <text class="label" x="88" y="870">Why these additions matter</text>
+  <text class="small" x="88" y="900">Firewalls filter allowed traffic before it reaches HAProxy and backend servers.</text>
+  <text class="small" x="88" y="923">HTTPS encrypts browser-to-site traffic and protects credentials and session data.</text>
+
+  <rect class="box" x="775" y="835" width="660" height="110"/>
+  <text class="label" x="803" y="870">Remaining issues</text>
+  <text class="warn" x="803" y="900">SSL termination at HAProxy means backend traffic may be unencrypted.</text>
+  <text class="warn" x="803" y="923">Only one writable MySQL Primary limits write availability and failover.</text>
+  <text class="warn" x="803" y="946">Running web, app, and database roles together can cause resource contention.</text>
+</svg>
