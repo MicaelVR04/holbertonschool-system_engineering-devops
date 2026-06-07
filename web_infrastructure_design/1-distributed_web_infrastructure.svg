@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <style>
+    .bg { fill: #f8fafc; }
+    .box { fill: #ffffff; stroke: #1f2937; stroke-width: 2; rx: 10; }
+    .server { fill: #eef6ff; stroke: #1d4ed8; stroke-width: 3; rx: 14; }
+    .lb { fill: #ecfdf5; stroke: #047857; stroke-width: 3; rx: 14; }
+    .db { fill: #fff7ed; stroke: #c2410c; stroke-width: 2; rx: 10; }
+    .title { font: 700 28px Arial, sans-serif; fill: #111827; }
+    .label { font: 700 20px Arial, sans-serif; fill: #111827; }
+    .small { font: 16px Arial, sans-serif; fill: #374151; }
+    .note { font: 15px Arial, sans-serif; fill: #334155; }
+    .warn { font: 16px Arial, sans-serif; fill: #991b1b; }
+    .arrow { stroke: #111827; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+    .green { stroke: #047857; stroke-width: 3; fill: none; marker-end: url(#arrowhead-green); }
+    .orange { stroke: #c2410c; stroke-width: 3; fill: none; marker-end: url(#arrowhead-orange); }
+    .dash { stroke: #6b7280; stroke-width: 2; fill: none; stroke-dasharray: 8 6; marker-end: url(#arrowhead-gray); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#111827"/>
+    </marker>
+    <marker id="arrowhead-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#047857"/>
+    </marker>
+    <marker id="arrowhead-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#c2410c"/>
+    </marker>
+    <marker id="arrowhead-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1400" height="900"/>
+  <text class="title" x="55" y="55">1. Distributed web infrastructure: www.foobar.com</text>
+
+  <rect class="box" x="60" y="120" width="170" height="90"/>
+  <text class="label" x="108" y="158">User</text>
+  <text class="small" x="83" y="185">Browser client</text>
+
+  <rect class="box" x="300" y="105" width="220" height="120"/>
+  <text class="label" x="355" y="145">DNS</text>
+  <text class="small" x="326" y="176">www.foobar.com</text>
+  <text class="small" x="326" y="202">A record to HAProxy IP</text>
+
+  <rect class="lb" x="610" y="95" width="260" height="140"/>
+  <text class="label" x="690" y="137">HAProxy</text>
+  <text class="small" x="645" y="168">Load balancer</text>
+  <text class="small" x="645" y="194">Round-robin algorithm</text>
+  <text class="small" x="645" y="218">Active-Active backend</text>
+
+  <rect class="server" x="270" y="330" width="350" height="450"/>
+  <text class="label" x="392" y="370">Server 1</text>
+  <text class="small" x="375" y="395">Backend node A</text>
+
+  <rect class="box" x="315" y="430" width="260" height="62"/>
+  <text class="label" x="408" y="456">Nginx</text>
+  <text class="small" x="350" y="478">Web server</text>
+
+  <rect class="box" x="315" y="520" width="260" height="62"/>
+  <text class="label" x="362" y="546">Application server</text>
+  <text class="small" x="350" y="568">Runs dynamic logic</text>
+
+  <rect class="box" x="315" y="610" width="260" height="62"/>
+  <text class="label" x="388" y="636">Codebase</text>
+  <text class="small" x="350" y="658">Application files</text>
+
+  <rect class="db" x="315" y="700" width="260" height="55"/>
+  <text class="label" x="365" y="735">MySQL Primary</text>
+
+  <rect class="server" x="805" y="330" width="350" height="450"/>
+  <text class="label" x="927" y="370">Server 2</text>
+  <text class="small" x="910" y="395">Backend node B</text>
+
+  <rect class="box" x="850" y="430" width="260" height="62"/>
+  <text class="label" x="943" y="456">Nginx</text>
+  <text class="small" x="885" y="478">Web server</text>
+
+  <rect class="box" x="850" y="520" width="260" height="62"/>
+  <text class="label" x="897" y="546">Application server</text>
+  <text class="small" x="885" y="568">Runs dynamic logic</text>
+
+  <rect class="box" x="850" y="610" width="260" height="62"/>
+  <text class="label" x="923" y="636">Codebase</text>
+  <text class="small" x="885" y="658">Application files</text>
+
+  <rect class="db" x="850" y="700" width="260" height="55"/>
+  <text class="label" x="898" y="735">MySQL Replica</text>
+
+  <path class="dash" d="M 230 145 C 260 118, 278 118, 300 138"/>
+  <text class="note" x="242" y="105">DNS lookup</text>
+
+  <path class="arrow" d="M 520 165 C 560 165, 575 165, 610 165"/>
+  <text class="note" x="535" y="145">HAProxy IP</text>
+
+  <path class="arrow" d="M 230 185 C 365 260, 485 165, 610 185"/>
+  <text class="note" x="310" y="275">HTTP over TCP/IP</text>
+
+  <path class="green" d="M 690 235 C 590 300, 500 350, 445 430"/>
+  <path class="green" d="M 790 235 C 890 300, 940 350, 980 430"/>
+  <text class="note" x="590" y="305">Alternates requests between both active servers</text>
+
+  <path class="arrow" d="M 445 492 L 445 520"/>
+  <path class="arrow" d="M 445 582 L 445 610"/>
+  <path class="arrow" d="M 445 672 L 445 700"/>
+  <path class="arrow" d="M 980 492 L 980 520"/>
+  <path class="arrow" d="M 980 582 L 980 610"/>
+  <path class="arrow" d="M 980 672 L 980 700"/>
+
+  <path class="orange" d="M 575 728 C 665 770, 760 770, 850 728"/>
+  <text class="note" x="626" y="812">Database replication: Primary accepts writes, Replica copies data and serves reads if configured</text>
+
+  <rect class="box" x="60" y="650" width="175" height="130"/>
+  <text class="label" x="90" y="685">Issues</text>
+  <text class="warn" x="84" y="715">SPOF: HAProxy</text>
+  <text class="warn" x="84" y="740">No firewall</text>
+  <text class="warn" x="84" y="765">No HTTPS</text>
+
+  <rect class="box" x="1185" y="650" width="165" height="130"/>
+  <text class="label" x="1212" y="685">Missing</text>
+  <text class="warn" x="1210" y="715">Monitoring</text>
+  <text class="warn" x="1210" y="740">LB redundancy</text>
+  <text class="warn" x="1210" y="765">DB failover</text>
+</svg>
