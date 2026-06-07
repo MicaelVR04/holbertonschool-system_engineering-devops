@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <style>
+    .bg { fill: #f7f9fb; }
+    .box { fill: #ffffff; stroke: #1f2937; stroke-width: 2; rx: 10; }
+    .server { fill: #eef6ff; stroke: #1d4ed8; stroke-width: 3; rx: 14; }
+    .title { font: 700 28px Arial, sans-serif; fill: #111827; }
+    .label { font: 600 20px Arial, sans-serif; fill: #111827; }
+    .small { font: 16px Arial, sans-serif; fill: #374151; }
+    .warn { font: 16px Arial, sans-serif; fill: #991b1b; }
+    .arrow { stroke: #111827; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+    .dash { stroke: #6b7280; stroke-width: 2; fill: none; stroke-dasharray: 8 6; marker-end: url(#arrowhead-gray); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#111827"/>
+    </marker>
+    <marker id="arrowhead-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="60" y="56">0. Simple web stack: www.foobar.com</text>
+
+  <rect class="box" x="70" y="130" width="180" height="95"/>
+  <text class="label" x="120" y="170">User</text>
+  <text class="small" x="96" y="198">Browser client</text>
+
+  <rect class="box" x="365" y="110" width="230" height="135"/>
+  <text class="label" x="422" y="152">DNS</text>
+  <text class="small" x="394" y="184">foobar.com</text>
+  <text class="small" x="394" y="210">www A record</text>
+  <text class="small" x="394" y="232">points to 8.8.8.8</text>
+
+  <rect class="server" x="720" y="95" width="390" height="500"/>
+  <text class="label" x="844" y="135">One Server</text>
+  <text class="small" x="850" y="160">IP: 8.8.8.8</text>
+
+  <rect class="box" x="785" y="200" width="260" height="70"/>
+  <text class="label" x="882" y="232">Nginx</text>
+  <text class="small" x="818" y="255">Web server: handles HTTP</text>
+
+  <rect class="box" x="785" y="310" width="260" height="70"/>
+  <text class="label" x="846" y="342">Application server</text>
+  <text class="small" x="820" y="365">Runs dynamic application logic</text>
+
+  <rect class="box" x="785" y="420" width="260" height="70"/>
+  <text class="label" x="860" y="452">Codebase</text>
+  <text class="small" x="834" y="475">Application files</text>
+
+  <rect class="box" x="785" y="520" width="260" height="55"/>
+  <text class="label" x="888" y="553">MySQL</text>
+
+  <path class="dash" d="M 250 160 C 300 125, 320 125, 365 145"/>
+  <text class="small" x="260" y="120">DNS lookup for www.foobar.com</text>
+
+  <path class="arrow" d="M 595 178 C 650 178, 665 178, 720 178"/>
+  <text class="small" x="620" y="160">8.8.8.8</text>
+
+  <path class="arrow" d="M 250 200 C 425 330, 575 235, 785 235"/>
+  <text class="small" x="374" y="322">HTTP request over TCP/IP</text>
+
+  <path class="arrow" d="M 915 270 L 915 310"/>
+  <path class="arrow" d="M 915 380 L 915 420"/>
+  <path class="arrow" d="M 915 490 L 915 520"/>
+
+  <rect class="box" x="70" y="480" width="600" height="125"/>
+  <text class="label" x="95" y="520">Known issues</text>
+  <text class="warn" x="95" y="552">SPOF: one server means one failure can take the site down.</text>
+  <text class="warn" x="95" y="578">Maintenance downtime: restarting Nginx/app can interrupt service.</text>
+  <text class="warn" x="95" y="604">Cannot scale well: all traffic, app work, and database load hit one server.</text>
+</svg>
